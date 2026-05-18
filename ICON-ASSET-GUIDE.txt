@@ -1,0 +1,44 @@
+# FAVICON & ICON ASSET GUIDE — Popular Cycles
+# =============================================
+# Place all icon files inside:  /assests/icons/
+
+## Required Files
+# ───────────────────────────────────────────
+# favicon.ico          — 32×32 multi-size ICO (shows in browser tab)
+# icon.svg             — Vector SVG icon (modern browsers prefer this)
+# apple-touch-icon.png — 180×180 PNG (iOS home screen icon)
+# icon-192.png         — 192×192 PNG (Android home screen / PWA)
+# icon-512.png         — 512×512 PNG (PWA splash screen)
+
+## Optional (for wider browser support)
+# ───────────────────────────────────────────
+# favicon-16x16.png    — 16×16 PNG
+# favicon-32x32.png    — 32×32 PNG
+# mstile-150x150.png   — 150×150 PNG (Windows tiles)
+
+## How to Generate
+# ───────────────────────────────────────────
+# Easiest option (free, no sign-up):
+#   https://realfavicongenerator.net
+#   - Upload your logo or a simple "PC" monogram
+#   - Download the ZIP and extract files into /assests/icons/
+#   - It also generates the exact <link> tags you need
+
+# Alternative option:
+#   https://favicon.io
+#   - Upload image or generate from text
+#   - Download and copy files into /assests/icons/
+
+## Open Graph Image
+# ───────────────────────────────────────────
+# /assests/og-image.jpg  — 1200×630 JPG
+#   Used for WhatsApp link previews, Facebook, Twitter cards.
+#   Create this by taking a screenshot of your storefront
+#   or using Canva with your logo + store name + tagline.
+#   Keep text large and readable at small sizes.
+
+## HTML Already in index.html (DO NOT DUPLICATE):
+# <link rel="icon" href="/assests/icons/favicon.ico" sizes="any" />
+# <link rel="icon" href="/assests/icons/icon.svg" type="image/svg+xml" />
+# <link rel="apple-touch-icon" href="/assests/icons/apple-touch-icon.png" />
+# <link rel="manifest" href="/manifest.json" />

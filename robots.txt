@@ -1,0 +1,16 @@
+# robots.txt — Popular Cycles Kottarakara
+# https://popularcycles.in/
+
+# Allow all well-behaved crawlers
+User-agent: *
+Allow: /
+
+# Block access to any future admin or private paths
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://popularcycles.in/sitemap.xml
+
+# Crawl-delay (optional — polite hint for lower-priority bots)
+# Crawl-delay: 10

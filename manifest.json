@@ -1,0 +1,33 @@
+{
+  "name": "Popular Cycles Kottarakara",
+  "short_name": "Popular Cycles",
+  "description": "Kids cycles, electric ride-on toys, baby walkers, MTB, hybrid and teenage bikes – Kottarakara & Punalur, Kerala.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffedd8",
+  "theme_color": "#223382",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/assests/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assests/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "/assests/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "label": "Popular Cycles homepage"
+    }
+  ]
+}
