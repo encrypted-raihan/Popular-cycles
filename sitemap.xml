@@ -6,7 +6,7 @@
 
   <!-- Homepage / Main page -->
   <url>
-    <loc>https://popularcycles.in/</loc>
+    <loc>https://www.popularcycles.online/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -14,28 +14,28 @@
 
   <!-- Section anchors — treated as deep links for discovery -->
   <url>
-    <loc>https://popularcycles.in/#products</loc>
+    <loc>https://www.popularcycles.online/#products</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://popularcycles.in/#why</loc>
+    <loc>https://www.popularcycles.online/#why</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://popularcycles.in/#faq</loc>
+    <loc>https://www.popularcycles.online/#faq</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://popularcycles.in/#contact</loc>
+    <loc>https://www.popularcycles.online/#contact</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>

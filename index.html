@@ -59,7 +59,6 @@
        FAVICONS  (replace files in /assests/icons/)
   ═══════════════════════════════════════════════════ -->
   <link rel="icon" href="/assests/icons/favicon.ico" sizes="any" />
-  <link rel="icon" href="/assests/icons/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assests/icons/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.json" />
 
@@ -130,9 +129,9 @@
         ],
         "sameAs": [
           "https://wa.me/919447590267",
-          "https://maps.app.goo.gl/REPLACE_WITH_YOUR_GOOGLE_MAPS_LINK"
+          "https://maps.app.goo.gl/RPN9bmHK7bXAE4ng6"
         ],
-        "hasMap": "https://maps.app.goo.gl/REPLACE_WITH_YOUR_GOOGLE_MAPS_LINK",
+        "hasMap": "https://maps.app.goo.gl/RPN9bmHK7bXAE4ng6",
         "areaServed": [
           {
             "@type": "City",
@@ -816,45 +815,183 @@
     .why-title { font-weight: 700; font-size: 1rem; color: var(--clr-deep-blue); margin-bottom: .4rem; }
     .why-body { font-size: .87rem; color: var(--muted); line-height: 1.6; }
 
-    /* ── FAQ SECTION ── */
-    #faq { background: #fff8f0; }
-    .faq-list { max-width: 780px; margin-top: 2.5rem; }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 1.2rem 0;
-    }
-    .faq-question {
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--clr-deep-blue);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      list-style: none;
-    }
-    .faq-question::after {
-      content: '+';
-      font-size: 1.4rem;
-      color: var(--accent);
-      flex-shrink: 0;
-      transition: transform .2s;
-    }
-    .faq-item.open .faq-question::after { transform: rotate(45deg); }
-    .faq-answer {
-      font-size: .92rem;
-      color: var(--muted);
-      line-height: 1.7;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .35s ease, padding .2s;
-    }
-    .faq-item.open .faq-answer {
-      max-height: 300px;
-      padding-top: .8rem;
-    }
+/* ── FAQ SECTION (modern redesign) ── */
+#faq {
+  background:
+    radial-gradient(circle at top left, rgba(155, 172, 216, 0.22), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(249, 133, 19, 0.10), transparent 30%),
+    linear-gradient(180deg, #fff8f0 0%, #fff4e8 100%);
+}
 
+.faq-shell {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.faq-copy {
+  position: sticky;
+  top: 92px;
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(34, 51, 130, 0.10);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 18px 45px rgba(17, 17, 68, 0.07);
+}
+
+.faq-copy .section-desc {
+  margin-bottom: 1.5rem;
+}
+
+.faq-highlight {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 1rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(34, 51, 130, 0.08), rgba(249, 133, 19, 0.08));
+  border: 1px solid rgba(34, 51, 130, 0.12);
+  color: var(--clr-deep-blue);
+  line-height: 1.6;
+}
+
+.faq-highlight strong {
+  display: block;
+  margin-bottom: .2rem;
+}
+
+.faq-highlight-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(17, 17, 68, 0.08);
+  flex-shrink: 0;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+  max-width: none;
+  margin-top: 0;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(34, 51, 130, 0.10);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(17, 17, 68, 0.05);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(17, 17, 68, 0.08);
+  border-color: rgba(249, 133, 19, 0.22);
+}
+
+.faq-question {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--clr-deep-blue);
+  cursor: pointer;
+  padding: 1.15rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  font: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.faq-question span:first-child {
+  line-height: 1.45;
+}
+
+.faq-chev {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(34, 51, 130, 0.08);
+  color: var(--clr-dark-blue);
+  transition: transform .25s ease, background .25s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-chev {
+  transform: rotate(180deg);
+  background: rgba(249, 133, 19, 0.14);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height .4s ease,
+    padding .3s ease,
+    opacity .25s ease;
+  opacity: 0;
+  padding: 0 1.2rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: .95rem;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  opacity: 1;
+  padding: 0 1.2rem 1.15rem;
+}
+
+.faq-answer {
+  padding: 0 1.2rem;
+}
+
+.faq-item.open .faq-answer {
+  padding-bottom: 1.15rem;
+}
+
+@media (max-width: 900px) {
+  .faq-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-copy {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-copy {
+    padding: 1.4rem;
+    border-radius: 22px;
+  }
+
+  .faq-question {
+    font-size: .95rem;
+    padding: 1rem 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1rem;
+  }
+
+  .faq-item.open .faq-answer {
+    padding-bottom: 1rem;
+  }
+}
     /* ── CONTACT ── */
     #contact { background: #ffb866; }
     #contact .section-title { color: var(--clr-deep-blue); }
@@ -1827,70 +1964,87 @@
     <!-- ══════════════════════════════════════
          FAQ
     ══════════════════════════════════════ -->
-    <section id="faq" aria-labelledby="faq-heading">
-      <div class="reveal">
-        <div class="section-label">Common Questions</div>
-        <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
-        <p class="section-desc">Everything you need to know before visiting Popular Cycles at Pulamon Junction, Kottarakara.</p>
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="faq-shell reveal">
+    <div class="faq-copy">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+      <p class="section-desc">
+        Quick answers about location, products, timings, wholesale, and delivery support at Popular Cycles.
+      </p>
+
+      <div class="faq-highlight">
+        <div class="faq-highlight-icon" aria-hidden="true">✨</div>
+        <div>
+          <strong>Need a fast answer?</strong>
+          Call or WhatsApp us and we will help directly.
+        </div>
       </div>
-      <div class="faq-list reveal">
+    </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-            Where is Popular Cycles located?
-          </button>
-          <div class="faq-answer" role="region">
-            Popular Cycles is located at Pulamon Junction, Kottarakara, Kerala 691531. We serve customers from Kottarakara, Punalur, and across Kollam district. Walk in any day during business hours — we're open until 8:30 PM.
-          </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>Where is Popular Cycles located?</span>
+          <span class="faq-chev" aria-hidden="true">⌄</span>
+        </button>
+        <div class="faq-answer" role="region">
+          Popular Cycles is located at Pulamon Junction, Kottarakara, Kerala 691531. We also serve customers from Punalur and surrounding areas of Kollam district.
         </div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-            What types of cycles does Popular Cycles sell?
-          </button>
-          <div class="faq-answer" role="region">
-            We sell a wide range including kids' tricycles (3-wheelers), 12-inch and 13-inch children's bicycles, standard cycles, disc brake cycles, front suspension cycles, gear cycles, MTB mountain bikes, hybrid cycles, electric cycles, and fitness cycles — from top brands like Hero, BSA, Hercules, Firefox, Trek, Montra, Kross, and more.
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>What types of cycles does Popular Cycles sell?</span>
+          <span class="faq-chev" aria-hidden="true">⌄</span>
+        </button>
+        <div class="faq-answer" role="region">
+          We sell kids' tricycles, 12-inch and 13-inch kids' bicycles, standard cycles, disc brake cycles, front suspension cycles, gear cycles, MTB, hybrid cycles, electric cycles, and fitness cycles.
         </div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-            Does Popular Cycles sell electric ride-on toys?
-          </button>
-          <div class="faq-answer" role="region">
-            Yes! We stock a wide variety of battery-powered electric ride-on toys for kids including electric cars, electric bikes, electric scooters, and electric jeeps in multiple colours. All come with remote control, music, and LED lights.
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>Does Popular Cycles sell electric ride-on toys?</span>
+          <span class="faq-chev" aria-hidden="true">⌄</span>
+        </button>
+        <div class="faq-answer" role="region">
+          Yes. We stock electric cars, bikes, scooters, and jeeps for kids. Most options include remote control, music, and LED lights.
         </div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-            What are the store timings?
-          </button>
-          <div class="faq-answer" role="region">
-            Popular Cycles is open every day of the week and closes at 8:30 PM. You can also reach us anytime on WhatsApp at +91 94475 90267 for quick enquiries about stock, pricing, and availability.
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>What are the store timings?</span>
+          <span class="faq-chev" aria-hidden="true">⌄</span>
+        </button>
+        <div class="faq-answer" role="region">
+          Popular Cycles is open every day and closes at 8:30 PM. You can also reach us on WhatsApp for quick enquiries.
         </div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-            Does Popular Cycles do wholesale supply?
-          </button>
-          <div class="faq-answer" role="region">
-            Yes, Popular Cycles caters to both retail customers and wholesale buyers across Kerala. Contact us on WhatsApp for bulk pricing, dealer enquiries, and availability.
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>Does Popular Cycles do wholesale?</span>
+          <span class="faq-chev" aria-hidden="true">⌄</span>
+        </button>
+        <div class="faq-answer" role="region">
+          Yes, we cater to both retail customers and wholesale buyers. Contact us for bulk pricing and availability.
         </div>
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
-            Which bicycle brands does Popular Cycles stock?
-          </button>
-          <div class="faq-answer" role="region">
-            We are stockists for Hero Cycles, BSA, Hercules, Avon, Firefox, Tata Stryder, Kross, Atlas, Montra, and Trek — some of the most trusted bicycle brands in India.
-          </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+          <span>Which bicycle brands does Popular Cycles stock?</span>
+          <span class="faq-chev" aria-hidden="true">⌄</span>
+        </button>
+        <div class="faq-answer" role="region">
+          We stock trusted brands such as Hero, BSA, Hercules, Avon, Firefox, Tata Stryder, Kross, Atlas, Montra, and Trek.
         </div>
-
-      </div><!-- /faq-list -->
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- ══════════════════════════════════════
          CONTACT
@@ -2010,10 +2164,22 @@
 
     // ── FAQ ACCORDION ──
     function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen);
+  const item = btn.closest('.faq-item');
+  const list = btn.closest('.faq-list');
+  const isOpen = item.classList.contains('open');
+
+  // Close other open items for a cleaner accordion feel
+  list.querySelectorAll('.faq-item.open').forEach(openItem => {
+    if (openItem !== item) {
+      openItem.classList.remove('open');
+      const openBtn = openItem.querySelector('.faq-question');
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
     }
+  });
+
+  item.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
 
     // ── SCROLL REVEAL ──
     const observer = new IntersectionObserver((entries) => {

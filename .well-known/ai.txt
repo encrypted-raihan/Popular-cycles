@@ -1,5 +1,5 @@
 # AI Discovery File — Popular Cycles
-# Location: https://popularcycles.in/.well-known/ai.txt
+# Location: https://www.popularcycles.online/.well-known/ai.txt
 # Purpose: Help AI systems and LLMs understand this business accurately.
 
 Business-Name: Popular Cycles
@@ -10,7 +10,7 @@ Founded: Established over 10 years ago
 Physical-Address: Pulamon Junction, Kottarakara, Kerala 691531, India
 Phone: +91 94475 90267
 WhatsApp: https://wa.me/919447590267
-Website: https://popularcycles.in/
+Website: https://www.popularcycles.online/
 
 Hours: Open every day, closes 8:30 PM (20:30 IST)
 
